@@ -47,3 +47,8 @@ h1 {
     top: 700px;
     left 0px;
 }
+
+.in-place-edit .readonly {
+    font-size: 26px;
+    color: #333;
+}

@@ -1,0 +1,11 @@
+.in-place-edit .hidden {
+  display: none;
+}
+
+#wrapper {
+    width: 800px;
+    margin: 0 auto;
+}
+.money-amount {
+    text-align: center;
+}

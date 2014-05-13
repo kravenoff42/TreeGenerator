@@ -1,10 +1,42 @@
-<h1>HTML 5 canvas tree generator</h1>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    </head>
+    <body>
+        <div id='wrapper'>
+            <canvas id="c"></canvas>
 
-<canvas id="c" style="border:1px solid"></canvas>
-<div id="configurations"></div>
-<script type="text/javascript" src="leafMaps.js"></script>
-<script type="text/javascript" src="colorMaps.js"></script>
-<script type="text/javascript" src="Drawer.js"></script>
-<script type="text/javascript" src="Branch.js"></script>
-<script type="text/javascript" src="TreeGenerator.js"></script>
-<script type="text/javascript" src="main.js"></script>
+            <!-- Amount of money field -->
+            <div class="money-amount">
+                <span class="in-place-edit">
+                  <span class="readonly"><span class="value">1234</span>&nbsp;<a href='#'>edit</a></span>
+                  <span class="editable hidden"><input type="text" /><button class="save">Save</button><span class="error hidden"></span></span>
+                </span>
+            </div>
+
+            <div id="configurations"></div>
+        </div>
+
+        <!-- SCRIPTS -->
+        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+        <script src="jsInPlaceEditor.js"></script>
+        <script>
+          $(document).ready(function() {
+            $(".in-place-edit").jsInPlaceEditor({
+              complete: function MyOnComplete(value, callback) {
+            console.log(value);
+                callback(null);
+              }
+            });
+          });
+        </script>
+
+        <script type="text/javascript" src="leafMaps.js"></script>
+        <script type="text/javascript" src="colorMaps.js"></script>
+        <script type="text/javascript" src="Drawer.js"></script>
+        <script type="text/javascript" src="Branch.js"></script>
+        <script type="text/javascript" src="TreeGenerator.js"></script>
+        <script type="text/javascript" src="main.js"></script>
+    </body>
+</html>

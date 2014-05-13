@@ -3,7 +3,7 @@
 }
 
 body {
-    overflow: hidden;
+    overflow-x: hidden;
     margin-left: 0px;
     
     /* GRADIENT */
@@ -40,7 +40,7 @@ h1 {
 }
 .ground {
     width: 100%;
-    height: 100%;
+    height: 50%;
     background: #ebaa57;
     position: absolute;
     z-index: 15;

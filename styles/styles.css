@@ -2,14 +2,48 @@
   display: none;
 }
 
+body {
+    overflow: hidden;
+    margin-left: 0px;
+    
+    /* GRADIENT */
+    background: #99f2fc; /* Old browsers */
+    background: -moz-linear-gradient(top,  #99f2fc -1%, #eff7f9 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(-1%,#99f2fc), color-stop(100%,#eff7f9)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #99f2fc -1%,#eff7f9 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #99f2fc -1%,#eff7f9 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #99f2fc -1%,#eff7f9 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #99f2fc -1%,#eff7f9 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99f2fc', endColorstr='#eff7f9',GradientType=0 ); /* IE6-9 */
+}
+
 #wrapper {
+    position: relative;
     width: 800px;
     margin: 0 auto;
+    text-align: center;
+    z-index: 20;
+    overflow: hidden;
 }
 #c {
-    width: 800px;
-    height: 800px;
+    width: 700px;
+    height: 700px;
+    display: inline;
 }
 .money-amount {
     text-align: center;
+}
+h1 {
+    text-align: center;
+    color: #0079c9;
+    font-style: italic;
+}
+.ground {
+    width: 100%;
+    height: 100%;
+    background: #ebaa57;
+    position: absolute;
+    z-index: 15;
+    top: 700px;
+    left 0px;
 }

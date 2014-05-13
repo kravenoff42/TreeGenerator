@@ -46,13 +46,19 @@ function getConfiguartions(){
 	
 }
 
-function generateTree(){
+function generateTree(width, height, color){
 
 	getConfiguartions();
-	c.fillStyle='#fff';
-	c.fillRect(0,0,800,800);
-	var generator=new TreeGenerator(400,750);
-	generator.genT(400,750);
+	c.fillStyle=color;
+	c.fillRect(0,0,width,height);
+    
+    var treeWidth = parseInt(width/2);
+    var treeHeight = parseInt(height*0.9);
+    
+    console.log(width, height, treeWidth, treeHeight);
+    
+	var generator=new TreeGenerator(treeWidth, treeHeight);
+	generator.genT(treeWidth, treeHeight);
 
 }
 
@@ -119,9 +125,12 @@ window.onload = function() {
 	window.c=c;	
 	window.drawer = new Drawer(c);
 
-	canvasElement.height = $('#c').width();
-	canvasElement.width = $('#c').height();
+    var width = $('#c').width();
+    var height = $('#c').height();
+    
+	canvasElement.height = width;
+	canvasElement.width = height;
 
-	generateTree();
+	generateTree(width, height, 'rgba(255, 255, 255, 0)');
 	
 }

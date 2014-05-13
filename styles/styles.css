@@ -6,6 +6,10 @@
     width: 800px;
     margin: 0 auto;
 }
+#c {
+    width: 800px;
+    height: 800px;
+}
 .money-amount {
     text-align: center;
 }

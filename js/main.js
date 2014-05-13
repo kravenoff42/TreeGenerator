@@ -119,11 +119,9 @@ window.onload = function() {
 	window.c=c;	
 	window.drawer = new Drawer(c);
 
-	canvasElement.height = 800;
-	canvasElement.width = 800;
+	canvasElement.height = $('#c').width();
+	canvasElement.width = $('#c').height();
 
-	createConfigurations();
 	generateTree();
-	
 	
 }

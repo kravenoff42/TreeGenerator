@@ -5,13 +5,13 @@
     </head>
     <body>
         <div id='wrapper'>
-            <h1>Build your own money tree!</h1>
+            <h1>Build your own tree!</h1>
             <canvas id="c"></canvas>
 
             <!-- Amount of money field -->
             <div class="money-amount">
                 <span class="in-place-edit">
-                  <span class="readonly"><span class="value">1234</span>&nbsp;<a href='#'>edit</a></span>
+                  <span class="readonly"><span class="value"></span>&nbsp;<a href='#'>edit</a></span>
                   <span class="editable hidden"><input type="text" /><button class="save">Save</button><span class="error hidden"></span></span>
                 </span>
             </div>
@@ -21,24 +21,26 @@
         <div class="ground"></div>
         
         <!-- SCRIPTS -->
-        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-        <script src="js/jsInPlaceEditor.js"></script>
-        <script>
-          $(document).ready(function() {
-            $(".in-place-edit").jsInPlaceEditor({
-              complete: function MyOnComplete(value, callback) {
-            console.log(value);
-                callback(null);
-              }
-            });
-          });
-        </script>
-
         <script type="text/javascript" src="js/leafMaps.js"></script>
         <script type="text/javascript" src="js/colorMaps.js"></script>
         <script type="text/javascript" src="js/Drawer.js"></script>
         <script type="text/javascript" src="js/Branch.js"></script>
         <script type="text/javascript" src="js/TreeGenerator.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
+
+        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+        <script src="js/jsInPlaceEditor.js"></script>
+        
+        <script>
+          $(document).ready(function() {
+            $(".in-place-edit").jsInPlaceEditor({
+              complete: function(value, callback) {
+                updateTree();
+                callback(null);
+              }
+            });
+          });
+        </script>
+        
     </body>
 </html>

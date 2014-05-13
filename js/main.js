@@ -21,6 +21,7 @@ BRANCH_COLOR = '#'+colorMaps[Math.ceil(rand(0,colorMaps.length-1))];
 OUTGROWTH_ISSHOWN = true;
 OUTGROWTH_BRANCH_WIDTH = 4;
 
+var gWidth, gHeight;
 
 Number.prototype.degree = function() {
 	return this * Math.PI / 180;
@@ -49,17 +50,22 @@ function getConfiguartions(){
 function generateTree(width, height, color){
 
 	getConfiguartions();
-	c.fillStyle=color;
+    if(color) {
+	   c.fillStyle=color;
+    }
 	c.fillRect(0,0,width,height);
     
     var treeWidth = parseInt(width/2);
     var treeHeight = parseInt(height*0.9);
     
-    console.log(width, height, treeWidth, treeHeight);
-    
 	var generator=new TreeGenerator(treeWidth, treeHeight);
 	generator.genT(treeWidth, treeHeight);
 
+}
+
+function updateTree() {
+    window.c.clearRect(0, 0, gWidth, gHeight);
+	generateTree(gWidth, gHeight);    
 }
 
 function createConfigurations(){
@@ -127,6 +133,9 @@ window.onload = function() {
 
     var width = $('#c').width();
     var height = $('#c').height();
+    
+    gWidth = width;
+    gHeight = height;
     
 	canvasElement.height = width;
 	canvasElement.width = height;

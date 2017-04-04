@@ -32,14 +32,32 @@
         <script src="js/jsInPlaceEditor.js"></script>
         
         <script>
-          $(document).ready(function() {
-            $(".in-place-edit").jsInPlaceEditor({
-              complete: function(value, callback) {
-                updateTree();
-                callback(null);
-              }
+            $(document).ready(function() {
+                $(".in-place-edit").jsInPlaceEditor({
+                  complete: function(value, callback) {
+                    updateTree();
+                    console.log(splitMoney(value));
+
+                    callback(null);
+                  }
+                });
             });
-          });
+            
+            function splitMoney(money) {
+                var notes = [5000, 1000, 500, 100, 50, 10, 5];
+                var results = {};
+                
+                for(var idx in notes) {
+                    results[notes[idx]] = 0;
+                    var remains = money % notes[idx];
+                    if(remains == money) continue;
+                        
+                    results[notes[idx]] = Math.floor(money / notes[idx]);
+                    money = remains; 
+                }
+                
+                return results;
+            }
         </script>
         
     </body>
